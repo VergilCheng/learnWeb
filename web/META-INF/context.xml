@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <!--在上下文标签中配置Resource对象，Resource对象中有10个属性，其中
+        4个JDBC,三个Resource对象控制的，tomcat容器管理的，以及jvm配置所需要的-->
+    <!--这里我们只配置JDBC的，接下来是属性名称说明
+        maxActive：连接池活跃连接数的最大值
+        maxIdle：连接池空闲连接数的最大值
+        name：连接池名字
+        auth：连接池由谁来管理，Container表示tomcat管理
+        maxWait：客户端连接最长等待服务器发给客户端数据库连接的时间
+        type：数据库连接池类型，JDK中提供了DataSource为javax.sql.DataSource作为连接池接口-->
+    <Resource
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/ssm"
+            username="root"
+            password="123asd,./"
+            maxActive="50"
+            maxIdle="20"
+            name="test"
+            auth="Container"
+            maxWait="10000"
+            type="javax.sql.DataSource"
+    />
+
+</Context>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- default:引用 environment 的 id,当前所使用的JDBC环境，可以在configuration中配置多种enviroment环境，例如oracle和mysql、sqlServer等-->
+    <environments default="default">
+        <!--声明可以使用的环境-->
+        <environment id="default">
+            <!--事务控制与JDBC的事务控制是相同的。默认为自动提交-->
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED"><!--默认为数据库的连接池，也有不是连接池的-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123asd,./"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--在mybatis.xml文件中需要加载对应类的Mapper文件-->
+    <mappers>
+        <mapper resource="cn/uestc/mapper/FlowerMapper.xml"/>
+    </mappers>
+</configuration>

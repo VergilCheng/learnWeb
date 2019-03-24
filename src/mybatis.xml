@@ -20,5 +20,6 @@
     <!--在mybatis.xml文件中需要加载对应类的Mapper文件-->
     <mappers>
         <mapper resource="cn/uestc/mapper/FlowerMapper.xml"/>
+        <mapper resource="cn/uestc/mapper/PeopleMapper.xml"/>
     </mappers>
 </configuration>

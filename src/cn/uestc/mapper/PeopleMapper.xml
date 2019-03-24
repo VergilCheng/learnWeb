@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:理解成实现类的全路径（包名+类名）-->
+<mapper namespace="cn.uestc.mapper.PeopleMapper">
+    <!-- id:方法名
+    parameterType:定义参数类型
+    resultType:返回值类型.如果方法返回值是 list,在 resultType 中写 List 的泛型,因为 mybatis是对 jdbc 封装,
+               一行一行读取数据（jdbc的select返回的结果集是通过迭代器按行读取的）
+    -->
+    <select id="selAll"
+            resultType="cn.uestc.pojo.People">
+        select * from people;
+    </select>
+    <select id="selOne" resultType="int">
+        select count(*) from  people;
+    </select>
+
+    <select id="selMap" resultType="cn.uestc.pojo.People">
+        select * from people;
+    </select>
+</mapper>

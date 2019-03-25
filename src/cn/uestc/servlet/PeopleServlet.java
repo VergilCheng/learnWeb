@@ -20,6 +20,9 @@ import java.util.List;
 //夹下，并以selAll命名，虚拟路径虽然不存在在实际的项目根目录下，但是是可以实际访问到的。我们可以把它认为是实际存在与项目根路径下的，
 //也就是web/下。
 @WebServlet(value = {"/homework/people/selAll"})
+/**
+ * 按照MVC分层开发模式，创建servlet表示层将数据库数据展示到index.jsp中
+ */
 public class PeopleServlet extends HttpServlet {
 
     private PeopleService peopleServlet = new PeopleServiceImpl();

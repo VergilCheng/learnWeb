@@ -1,7 +1,5 @@
-package cn.uestc.service.impl;
+package cn.uestc.test;
 
-import cn.uestc.pojo.People;
-import cn.uestc.service.PeopleService;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -12,16 +10,20 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * 业务层实现类
- * 在数据访问层处理异常和在控制器中处理异常，service中只抛出异常
+ * 测试mybatis集成log4j
  */
-public class PeopleServiceImpl implements PeopleService {
-    @Override
-    public List<People> show() throws IOException {
+public class TestLog4jUse4mybatis {
+    public static void main(String[] args) throws IOException {
+
         InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        List<People> list = sqlSession.selectList("cn.uestc.mapper.PeopleMapper.selAll");
-        return list;
+
+        List<Object> list = sqlSession.selectList("cn.uestc.mapper.PeopleMapper.selAll");
+
+        sqlSession.close();
+
     }
 }

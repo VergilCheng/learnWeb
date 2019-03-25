@@ -12,7 +12,9 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * 测试mybatis框架是否能够查询到数据库中的数据
+ */
 public class TestFlowerMapper {
     public static void main(String[] args) throws IOException {
         //获取mybatis所提供的资源加载类Resources在classPath下读取mybatis的配置文件：mybatis.xml。

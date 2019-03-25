@@ -11,6 +11,9 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 测试mybatis能否返回数据库中people的数据
+ */
 public class TestPeopleMapper {
     public static void main(String[] args) throws IOException {
         InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");

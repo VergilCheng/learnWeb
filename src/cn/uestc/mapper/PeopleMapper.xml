@@ -17,7 +17,60 @@
         select count(*) from  people;
     </select>
 
+    <!--带参数查询,参数为int-->
+    <select id="selById"
+        parameterType="int"
+        resultType="cn.uestc.pojo.People">
+        select * from people where id=#{id};
+    </select>
+
+    <!--带参数查询,参数为对象-->
+    <select id="selByPeopleId"
+            parameterType="cn.uestc.pojo.People"
+            resultType="cn.uestc.pojo.People">
+        select * from people where id=#{id} and age=#{age} and name=#{name};
+    </select>
+
+
+    <!--带参数查询,参数为Map-->
+    <select id="selByMap"
+            parameterType="map"
+            resultType="cn.uestc.pojo.People">
+        select * from people where id=#{id} and age=#{age} and name=#{name};
+    </select>
+
     <select id="selMap" resultType="cn.uestc.pojo.People">
         select * from people;
+    </select>
+
+    <!--插入-->
+    <insert id="insertPeople"
+        parameterType="cn.uestc.pojo.People">
+        insert into people(
+          name, age
+          )
+          values (#{name},#{age})
+    </insert>
+
+    <!--更新-->
+    <update id="upd" parameterType="People">
+        update people set name = #{name} where id = #{id}
+    </update>
+
+    <!--删除-->
+    <delete id="del" parameterType="int">
+        delete from people where id = #{0}
+    </delete>
+
+    <!--mybatis分页查询-->
+    <select id="page"
+        resultType="cn.uestc.pojo.People">
+        select * from people limit #{pageStart},#{pageSize}
+    </select>
+
+    <!--测试mybatis.xml中typeAlias别名标签的使用-->
+    <select id="selOne2"
+            resultType="People">
+        select * from people where id=#{id};
     </select>
 </mapper>

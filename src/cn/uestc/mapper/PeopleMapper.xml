@@ -13,7 +13,7 @@
             resultType="cn.uestc.pojo.People">
         select * from people;
     </select>
-    <select id="selOne" resultType="int">
+    <select id="selCount" resultType="long">
         select count(*) from  people;
     </select>
 
@@ -64,9 +64,12 @@
 
     <!--mybatis分页查询-->
     <select id="page"
-        resultType="cn.uestc.pojo.People">
+            parameterType="map"
+        resultType="People">
         select * from people limit #{pageStart},#{pageSize}
     </select>
+
+
 
     <!--测试mybatis.xml中typeAlias别名标签的使用-->
     <select id="selOne2"

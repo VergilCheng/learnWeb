@@ -33,7 +33,7 @@ public class TestPeopleMapper {
             System.out.println(p);
 
         }
-        int count = sqlSession.selectOne("cn.uestc.mapper.PeopleMapper.selOne");
+        int count = sqlSession.selectOne("cn.uestc.mapper.PeopleMapper.selCount");
         System.out.println(count);
         Map<String, People> map = sqlSession.selectMap("cn.uestc.mapper.PeopleMapper.selMap", "name");
         System.out.println(map);

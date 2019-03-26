@@ -50,5 +50,7 @@
     <mappers>
         <mapper resource="cn/uestc/mapper/FlowerMapper.xml"/>
         <mapper resource="cn/uestc/mapper/PeopleMapper.xml"/>
+        <mapper resource="cn/uestc/mapper/AccountMapper.xml"/>
+        <mapper resource="cn/uestc/mapper/logMapper.xml"/>
     </mappers>
 </configuration>

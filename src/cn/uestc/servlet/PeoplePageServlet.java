@@ -2,7 +2,7 @@ package cn.uestc.servlet;
 
 import cn.uestc.pojo.PageInfo;
 import cn.uestc.service.PageService;
-import cn.uestc.service.impl.PageSizeImpl;
+import cn.uestc.service.impl.PeoplePageSizeImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,11 +14,11 @@ import java.io.IOException;
 /**
  * 分页的servlet
  */
-@WebServlet("/page")
-public class PageServlet extends HttpServlet {
+@WebServlet("/peoplePage")
+public class PeoplePageServlet extends HttpServlet {
 
 
-    private PageService pageService = new PageSizeImpl();
+    private PageService pageService = new PeoplePageSizeImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +35,7 @@ public class PageServlet extends HttpServlet {
         PageInfo pageInfo = pageService.findPage(pageSize, pageNumber);
         resp.setCharacterEncoding("utf-8");
         req.setAttribute("pageInfo", pageInfo);
-        req.getRequestDispatcher("page.jsp").forward(req, resp);
+        req.getRequestDispatcher("peoplePage.jsp").forward(req, resp);
 
     }
 

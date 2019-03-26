@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 分页服务层实现
  */
-public class PageSizeImpl implements PageService {
+public class LogPageSizeImpl implements PageService {
     @Override
     public PageInfo findPage(int pageSize, int pageNumber) throws IOException {
 
@@ -30,12 +30,12 @@ public class PageSizeImpl implements PageService {
         HashMap<String, Object> map = new HashMap<>();
         map.put("pageStart", (pageNumber - 1) * pageSize);
         map.put("pageSize", pageSize);
-        List<Object> list = sqlSession.selectList("cn.uestc.mapper.PeopleMapper.page", map);
-        long count = sqlSession.selectOne("cn.uestc.mapper.PeopleMapper.selCount");
+        List<Object> list = sqlSession.selectList("cn.uestc.mapper.logMapper.selectPage", map);
+        long count = sqlSession.selectOne("cn.uestc.mapper.logMapper.selCount");
         long total = count%pageSize==0?count/pageSize:count/pageSize+1;
         pageInfo.setPageNumber(pageNumber);
         pageInfo.setPageSize(pageSize);
-        pageInfo.setPeopleList(list);
+        pageInfo.setList(list);
         pageInfo.setTotal(total);
         return pageInfo;
     }

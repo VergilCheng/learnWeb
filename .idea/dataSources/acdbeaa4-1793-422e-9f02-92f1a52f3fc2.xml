@@ -842,38 +842,112 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="214" parent="13" name="flower"/>
-    <table id="215" parent="13" name="people">
+    <table id="214" parent="13" name="account"/>
+    <table id="215" parent="13" name="flower"/>
+    <table id="216" parent="13" name="log"/>
+    <table id="217" parent="13" name="people">
       <Comment>人员信息表</Comment>
     </table>
-    <column id="216" parent="214" name="id">
+    <column id="218" parent="214" name="id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="217" parent="214" name="name">
+    <column id="219" parent="214" name="accno">
       <Position>2</Position>
-      <DataType>varchar(30)|0s</DataType>
+      <DataType>varchar(18)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="214" name="price">
+    <column id="220" parent="214" name="password">
       <Position>3</Position>
-      <DataType>double(20)|0s</DataType>
+      <DataType>int(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="214" name="production">
+    <column id="221" parent="214" name="balance">
       <Position>4</Position>
-      <DataType>varchar(30)|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="220" parent="214" name="PRIMARY">
+    <column id="222" parent="214" name="name">
+      <Position>5</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="223" parent="214" name="index_accno_name">
+      <ColNames>accno
+name
+password</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="224" parent="214" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="221" parent="215" name="id">
+    <key id="225" parent="214" name="index_accno_name">
+      <ColNames>accno
+name
+password</ColNames>
+      <UnderlyingIndexName>index_accno_name</UnderlyingIndexName>
+    </key>
+    <column id="226" parent="215" name="id">
+      <Position>1</Position>
+      <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="227" parent="215" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="228" parent="215" name="price">
+      <Position>3</Position>
+      <DataType>double(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="229" parent="215" name="production">
+      <Position>4</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="230" parent="215" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="231" parent="216" name="id">
+      <Position>1</Position>
+      <DataType>int(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="232" parent="216" name="acconOut">
+      <Position>2</Position>
+      <DataType>varchar(18)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="233" parent="216" name="acconIn">
+      <Position>3</Position>
+      <DataType>varchar(18)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="234" parent="216" name="balance">
+      <Position>4</Position>
+      <DataType>double(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="235" parent="216" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="236" parent="217" name="id">
       <Position>1</Position>
       <Comment>编号</Comment>
       <DataType>int(10)|0s</DataType>
@@ -881,19 +955,19 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="222" parent="215" name="name">
+    <column id="237" parent="217" name="name">
       <Position>2</Position>
       <Comment>姓名</Comment>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="223" parent="215" name="age">
+    <column id="238" parent="217" name="age">
       <Position>3</Position>
       <Comment>年龄</Comment>
       <DataType>int(3)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="224" parent="215" name="PRIMARY">
+    <key id="239" parent="217" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

@@ -13,7 +13,7 @@ public class PageInfo {
     //所有记录可以分多少页
     private Long total;
     //分页查询得到的记录
-    private List<?> peopleList;
+    private List<?> list;
 
     public Integer getPageSize() {
         return pageSize;
@@ -31,19 +31,19 @@ public class PageInfo {
         this.pageNumber = pageNumber;
     }
 
-    public long getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(long total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 
-    public List<?> getPeopleList() {
-        return peopleList;
+    public List<?> getList() {
+        return list;
     }
 
-    public void setPeopleList(List<?> peopleList) {
-        this.peopleList = peopleList;
+    public void setList(List<?> list) {
+        this.list = list;
     }
 }

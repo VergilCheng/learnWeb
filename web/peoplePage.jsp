@@ -18,7 +18,7 @@
               <th>姓名</th>
               <th>年龄</th>
           </tr>
-          <c:forEach items="${pageInfo.peopleList}" var="peo">
+          <c:forEach items="${pageInfo.list}" var="peo">
               <tr>
                   <td>${peo.id}</td>
                   <td>${peo.name}</td>
@@ -26,8 +26,8 @@
               </tr>
           </c:forEach><br/>
       </table>
-      <a href="page?pageNumber=${pageInfo.pageNumber-1 }&pageSize=${pageInfo.pageSize}" <c:if test="${pageInfo.pageNumber<=1 }">  onclick="javascript:return false;" </c:if> >上一页</a>
-      <a href="page?pageNumber=${pageInfo.pageNumber+1 }&pageSize=${pageInfo.pageSize}" <c:if test="${pageInfo.pageNumber>=pageInfo.total }">  onclick="javascript:return false;" </c:if> >下一页</a>
+      <a href="peoplePage?pageNumber=${pageInfo.pageNumber-1 }&pageSize=${pageInfo.pageSize}" <c:if test="${pageInfo.pageNumber<=1 }">  onclick="javascript:return false;" </c:if> >上一页</a>
+      <a href="peoplePage?pageNumber=${pageInfo.pageNumber+1 }&pageSize=${pageInfo.pageSize}" <c:if test="${pageInfo.pageNumber>=pageInfo.total }">  onclick="javascript:return false;" </c:if> >下一页</a>
   $END$
   </body>
 </html>

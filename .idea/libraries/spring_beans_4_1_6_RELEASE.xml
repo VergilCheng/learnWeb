@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="spring-beans-4.1.6.RELEASE">
+    <CLASSES>
+      <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/01 Spring 官方包及源码/spring-framework-4.1.6.RELEASE/libs/spring-beans-4.1.6.RELEASE.jar!/" />
+      <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/01 Spring 官方包及源码/spring-framework-4.1.6.RELEASE/libs/spring-core-4.1.6.RELEASE.jar!/" />
+      <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/01 Spring 官方包及源码/spring-framework-4.1.6.RELEASE/libs/spring-expression-4.1.6.RELEASE.jar!/" />
+      <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/01 Spring 官方包及源码/spring-framework-4.1.6.RELEASE/libs/spring-context-4.1.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

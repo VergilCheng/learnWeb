@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+
+     对象创建
+
+        bean标签
+            id:表示spring创建好的对象的标识，不是对象名称（！=name）
+            name：对象名称（一般不用这个属性标签）
+            class：创建哪个类的对象
+     -->
+    <bean class="cn.uestc.pojo.People" id="p"/><!--无参构造创建:默认情况-->
+
+    <!--有参数构造-->
+    <bean class="cn.uestc.pojo.People" id="people">
+        <!--
+            constructor-arg：可以给对象的属性进行赋值，进行属性注入
+                index:表示构造方法参数中的第几个参数，从0开始
+                name：构造方法中参数的名称
+                type：构造方法中的参数类型（改关键字会对int 和封装类 Integer进行严格区分）
+                PS:index，name，type三个参数可以共存，方便指定spring容器按照专门的构造器来创建对象
+                如果发现匹配多个构造器，则执行多个构造方法中最后的构造器
+
+                ref：如果参数的值是对象，则使用该属性，传入值为bean的id
+                value：如果参数的值是基本数据类型或者String，使用该属性
+
+        -->
+        <constructor-arg index="0" value="123"></constructor-arg>
+        <constructor-arg name="name" value="张三"></constructor-arg>
+        <constructor-arg type="cn.uestc.pojo.People" ref="p"></constructor-arg>
+    </bean>
+
+    <!--使用实例工厂创建对象-->
+    <bean id="factory" class="cn.uestc.pojo.PeopleFactory"></bean>
+    <bean id="people2" factory-bean="factory" factory-method="createPeople"></bean>
+    <bean id="a" class="cn.uestc.pojo.A" factory-bean="factory" factory-method="createPeople1">
+        <constructor-arg value="A"/>
+    </bean>
+
+    <!--使用静态工厂创建对象-->
+    <bean id="people3" class="cn.uestc.pojo.PeopleFactory2" factory-method="newInstance"></bean>
+
+    <!--
+        属性注入
+            1.通过上述的构造器创建对象，以及constructor-arg标签注入
+            2.set方法注入：使用property标签
+        -->
+    <bean id="p2" class="cn.uestc.pojo.People">
+        <property name="name" value="cmz"/>
+        <!--
+            也可以将value属性替换成为property标签中的子标签进行赋值
+            -->
+        <property name="id">
+            <value>123456</value>
+        </property>
+        <property name="people" ref="a"/>
+        <property name="set" value="asdfasdf"/><!--只给集合赋一个值，此方法比较方便-->
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="strs" >
+            <array>
+                <value>3</value>
+                <value>4</value>
+                <value>5</value>
+                <value>6</value>
+            </array>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="1"/>
+                <entry key="2" value="2"/>
+                <entry key="3" value="3"/>
+                <entry key="4" value="4"/>
+            </map>
+        </property>
+    </bean>
+</beans>

@@ -1,6 +1,7 @@
 package cn.uestc.test;
 
 import cn.uestc.pojo.A;
+import cn.uestc.pojo.C;
 import cn.uestc.pojo.People;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -74,5 +75,16 @@ public class Test01 {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         People people = context.getBean("p2", People.class);
         System.out.println(people);
+    }
+    /**
+     * 没有被spring框架管理的类无法在xml文件中进行依赖注入，只能手动set方法注入
+     *
+     */
+    @Test
+    public void test6() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        C c = new C();
+        c.setPeople((People) context.getBean("p"));
+        System.out.println(c);
     }
 }

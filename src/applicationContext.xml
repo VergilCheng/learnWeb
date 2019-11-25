@@ -99,13 +99,29 @@
         <!--
         切点:aop pointcut
         id：切点id
-        expression：切点位置，该切点位置为Demo1中的demo2方法-->
+        expression：切点位置，该切点位置为Demo1中的所有方法-->
         <aop:pointcut id="mypoint1" expression="execution(* cn.uestc.test.Demo1.*(..))" />
         <!--切点的advisor，包含前置通知或者后置通知方法
             point-ref：切点的引用，即切点的id
             advice-ref：advisor的引用id，为spring管理的bean的id-->
         <aop:advisor advice-ref="mybefore" pointcut-ref="mypoint1"/>
-        <aop:advisor advice-ref="myafter" pointcut-ref="mypoint1"/>
+        <aop:advisor advice-ref="myafter" pointcut-ref="mypoint1" />
+    </aop:config>
+
+    <!--
+        基于AspectJ的异常通知-->
+    <!--1.配置异常通知方法所在的类的bean-->
+    <bean id="throw1" class="cn.uestc.advice.MyThrowAdvice"/>
+    <!--2.配置异常通知的切面-->
+    <aop:config>
+        <aop:aspect ref="throw1">
+            <aop:pointcut id="myThrow1" expression="execution(* cn.uestc.test.Demo1.demo6())"/>
+            <!--
+                method:进行异常通知的方法
+                throwing:进行异常通知方法的的方法参数名称
+                -->
+            <aop:after-throwing method="myException" pointcut-ref="myThrow1" throwing="e11"/>
+        </aop:aspect>
     </aop:config>
 
 </beans>

@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
  * @Auther: cmz
  * @Date: 2019/10/20
  * @Description: cn.uestc.advice
- * Demo1中方法demo2的前置通知的advisor，继承MethodBeforeAdvice，则改advisor可以需要重写befor方法，为前置通知方法
+ * Demo1中所有方法的前置通知的advisor，继承MethodBeforeAdvice，则改advisor可以需要重写befor方法，为前置通知方法
  * @version: 1.0
  */
 public class MyBeforeAdvice implements MethodBeforeAdvice {

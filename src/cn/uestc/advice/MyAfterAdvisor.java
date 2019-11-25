@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
  * @Auther: cmz
  * @Date: 2019/10/20
  * @Description: cn.uestc.advice
- * Demo1中方法demo2的后置通知的advisor，继承AfterReturningAdvice，则改advisor可以需要重写afterReturning方法，为后置通知方法
+ * Demo1中所有方法的后置通知的advisor，继承AfterReturningAdvice，则改advisor可以需要重写afterReturning方法，为后置通知方法
  * @version: 1.0
  */
 public class MyAfterAdvisor implements AfterReturningAdvice {

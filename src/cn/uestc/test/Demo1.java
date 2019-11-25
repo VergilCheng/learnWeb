@@ -31,6 +31,16 @@ public class Demo1 {
     public String demo5() {
         return "demo5";
     }
+    
+    public void demo6 () throws Exception {
+        int i = 5 / 0;
+        System.out.println("异常通知demo6");
+    }
+    
+    public void demo7 () throws Exception {
+        int i = 5 / 0;
+        System.out.println("异常通知demo7");
+    }
 
     public static void main(String[] args) {
         // 纵向执行流程

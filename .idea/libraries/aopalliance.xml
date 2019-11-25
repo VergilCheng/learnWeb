@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="aopalliance">
+    <CLASSES>
+      <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/03 aop命名空间依赖的jar/aopalliance.jar!/" />
+      <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/03 aop命名空间依赖的jar/aspectjweaver.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -11,6 +11,9 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -32,5 +35,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="spring-aop-4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="spring-tx-4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="spring-aspects-4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="aopalliance" level="project" />
   </component>
 </module>

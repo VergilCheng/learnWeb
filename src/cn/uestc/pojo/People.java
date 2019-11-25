@@ -94,7 +94,6 @@ public class People {
     public void setName(String name) {
         System.out.println("执行setName");
         this.name = name;
-
     }
 
     public String[] getStrs() {

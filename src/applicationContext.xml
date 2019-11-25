@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--
 
      对象创建
@@ -82,4 +85,27 @@
             </map>
         </property>
     </bean>
+
+
+    <!--aop的使用-->
+
+    <!--前置advisor的bean-->
+    <bean id="mybefore" class="cn.uestc.advice.MyBeforeAdvice"></bean>
+    <!--后置advisor的bean-->
+    <bean id="myafter" class="cn.uestc.advice.MyAfterAdvisor"></bean>
+    <!--Demo的bean-->
+    <bean id="demo1" class="cn.uestc.test.Demo1"/>
+    <aop:config>
+        <!--
+        切点:aop pointcut
+        id：切点id
+        expression：切点位置，该切点位置为Demo1中的demo2方法-->
+        <aop:pointcut id="mypoint1" expression="execution(* cn.uestc.test.Demo1.*(..))" />
+        <!--切点的advisor，包含前置通知或者后置通知方法
+            point-ref：切点的引用，即切点的id
+            advice-ref：advisor的引用id，为spring管理的bean的id-->
+        <aop:advisor advice-ref="mybefore" pointcut-ref="mypoint1"/>
+        <aop:advisor advice-ref="myafter" pointcut-ref="mypoint1"/>
+    </aop:config>
+
 </beans>

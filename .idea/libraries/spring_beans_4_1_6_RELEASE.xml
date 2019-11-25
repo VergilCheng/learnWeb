@@ -7,6 +7,8 @@
       <root url="jar://F:/尚学堂/尚学堂JavaWeb开发/02 Spring4/01 Spring第一天/01 资料/01 Spring 官方包及源码/spring-framework-4.1.6.RELEASE/libs/spring-context-4.1.6.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-context-4.1.6.RELEASE-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

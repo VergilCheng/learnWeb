@@ -1,5 +1,7 @@
 package cn.uestc.test;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 /**
  * @Auther: cmz
  * @Date: 2019/10/20
@@ -40,6 +42,10 @@ public class Demo1 {
     public void demo7 () throws Exception {
         int i = 5 / 0;
         System.out.println("异常通知demo7");
+    }
+    
+    public String demo8() {
+        return "环绕通知demo8测试方法";
     }
 
     public static void main(String[] args) {

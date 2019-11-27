@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="demo" class="cn.uestc.test.Demo1"/>
+    <!--
+        基于schema-base的方式进行的环绕通知-->
+    <bean id="myAround" class="cn.uestc.advice.MyAround"/>
+    <aop:config>
+        <aop:pointcut id="myPoint1" expression="execution(* cn.uestc.test.Demo1.demo8())"/>
+        <aop:advisor advice-ref="myAround" pointcut-ref="myPoint1"/>
+    </aop:config>
+
+</beans>
